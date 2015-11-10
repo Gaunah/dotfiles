@@ -8,6 +8,7 @@ torbrowser() {
 }
 
 skype() {
+	xhost local:root #idk why =/
 	docker run -it \
 		-v /dev/shm:/dev/shm \
 		-v /etc/machine-id:/etc/machine-id \
