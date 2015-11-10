@@ -1,0 +1,8 @@
+[user]
+	email = christoph@zelinski.de
+	name = gaunah
+[push]
+	default = simple
+
+[color]
+	ui = true
