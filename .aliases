@@ -1,2 +1,5 @@
 alias ll='ls -lhF'
 alias la='ls -alhF'
+
+alias v='nvim'
+alias gs='git status -s'
