@@ -3,8 +3,7 @@
 	name = gaunah
 [push]
 	default = simple
-
 [color]
 	ui = true
-[diff]
+[merge]
 	tool = meld
