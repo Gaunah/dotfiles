@@ -1,0 +1,62 @@
+# Florian Bruhin <me@the-compiler.org>
+ 
+use_xft yes
+xftfont profont:size=10
+override_utf8_locale yes
+ 
+update_interval 1
+total_run_times 0
+ 
+own_window yes
+own_window_type panel
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+ 
+border_inner_margin 0
+border_outer_margin 0
+draw_borders no
+draw_graph_borders no
+ 
+background no
+ 
+# Eliminate flickering
+double_buffer yes 
+minimum_size 1600 22
+maximum_width 1600
+ 
+# Use KiB/MiB/... instead of just bytes
+format_human_readable yes
+# Print used memory with buffers
+no_buffers no
+# Display k, G, ... instead of kiB, GiB, ...
+short_units yes
+ 
+default_color d0d0d0
+own_window_colour 1c1c1c
+ 
+use_spacer left
+if_up_strictness address
+pad_percents 2
+ 
+alignment top_left
+gap_x 163
+gap_y 0
+ 
+default_graph_size 8 30
+color0 d0d0d0
+color1 afdf87
+ 
+TEXT
+${voffset 3} \
+${color1}Load:${color0} ${loadavg} ${offset 10}\
+${color1}Temp:${color0} ${hwmon 0 temp 1}°C ${offset 10}\
+${color1}Mem:${color0} ${memperc}% (${mem}/${memmax}) ${offset 10}\
+${color1}Batt:${color0} ${battery_short} (${battery_time}) ${offset 20}\
+${if_up enp12s0}${color1}enp12s0:${color0} ${addrs enp12s0} \
+${color1}up${color0}${offset -18}${upspeedf enp12s0} (${offset -6}${totalup enp12s0}) \
+${color1}down${color0}${offset -18}${downspeedf enp12s0} (${totaldown enp12s0}) ${endif}\
+${if_up wlp6s0}${color1}wlp6s0:${color0} \
+${wireless_essid wlp6s0} (${offset -12}${wireless_link_qual_perc wlp6s0}%) ${addrs wlp6s0} \
+${color1}up${color0} ${offset -15}${upspeedf wlp6s0} (${totalup wlp6s0}) \
+${color1}down${color0}${offset -10}${downspeedf wlp6s0} (${totaldown wlp6s0}) ${endif}\
+${goto 1200}${color1}Time:${color0} ${time %T}   \
+${goto 1300}${color1}Date:${color0} ${time %a %d.%m.%Y}   \
