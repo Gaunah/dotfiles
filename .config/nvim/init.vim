@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -29,6 +30,7 @@ colorscheme jellybeans
 "intends
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab 
 set autoindent
+
 "search
 set nohlsearch
 set incsearch
