@@ -3,3 +3,5 @@ alias la='ls -alhF'
 
 alias v='nvim'
 alias gs='git status -s'
+alias gca='git commit -am'
+alias ga='git add .'
