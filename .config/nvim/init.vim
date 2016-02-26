@@ -25,7 +25,12 @@ set cursorline
 set wildmenu
 set lazyredraw
 set showcmd
+set autoread "Automatically reread files that have been changed externally
 colorscheme jellybeans
+
+"better up down on wrapped
+nnoremap j gj
+nnoremap k gk
 
 "intends
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab 
