@@ -43,6 +43,7 @@ set ignorecase
 set smartcase
 
 "mapping
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <F10> :NERDTreeToggle<CR>
 no <down> ddp
 no <left> <Nop>
@@ -52,6 +53,7 @@ nmap n nzz
 nmap N Nzz
 nmap { {zz
 nmap } }zz
+let mapleader = ","
 imap <leader>' ''<ESC>i
 imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i
