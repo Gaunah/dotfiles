@@ -28,6 +28,9 @@ set showcmd
 set autoread "Automatically reread files that have been changed externally
 colorscheme jellybeans
 
+" Clear trailing whitespace in selected file types on save
+autocmd BufWritePre *.py,*.js,*.hs,*.html,*.css,*.scss :%s/\s\+$//e
+
 "better up down on wrapped
 nnoremap j gj
 nnoremap k gk
