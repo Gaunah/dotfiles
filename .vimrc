@@ -46,6 +46,7 @@ set ignorecase
 set smartcase
 
 "mapping
+command F :%!astyle
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <F10> :NERDTreeToggle<CR>
 no <down> ddp
