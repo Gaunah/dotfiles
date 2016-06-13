@@ -21,6 +21,14 @@ let g:python_host_prog = '/usr/bin/python2.7'
 set laststatus=2 "for lightline
 let g:lightline = {'colorscheme': 'jellybeans',}
 
+"gvim stuff
+set guifont=Consolas:h12
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+set lines=50 columns=100
+
 syntax on
 set ruler
 set nu 
