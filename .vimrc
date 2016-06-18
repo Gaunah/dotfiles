@@ -73,3 +73,11 @@ imap <leader>{ {}<ESC>i
 imap <leader>< <><ESC>i
 imap <leader>[ []<ESC>i
 
+vnoremap <Leader>d "+d
+vnoremap <Leader>y "+y
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
+nnoremap <Leader>d "+d
+nnoremap <Leader>y "+y
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
