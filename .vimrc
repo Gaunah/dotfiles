@@ -22,12 +22,14 @@ set laststatus=2 "for lightline
 let g:lightline = {'colorscheme': 'jellybeans',}
 
 "gvim stuff
-set guifont=Consolas:h12
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-set lines=50 columns=100
+if has('gui running')
+	set guifont=Consolas:h12
+	set guioptions-=m  "remove menu bar
+	set guioptions-=T  "remove toolbar
+	set guioptions-=r  "remove right-hand scroll bar
+	set guioptions-=L  "remove left-hand scroll bar
+	set lines=50 columns=100
+endif
 
 syntax on
 set ruler
