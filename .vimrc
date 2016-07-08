@@ -84,3 +84,5 @@ nnoremap <Leader>d "+d
 nnoremap <Leader>y "+y
 nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
+
+nnoremap ' `
