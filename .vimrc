@@ -86,3 +86,6 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 
 nnoremap ' `
+
+"sort block
+nnoremap <Leader>so vip:sort<return>
