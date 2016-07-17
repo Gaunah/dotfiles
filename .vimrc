@@ -10,7 +10,7 @@ call vundle#begin('~/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'peterhoeg/vim-qml'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
