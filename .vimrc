@@ -32,6 +32,8 @@ if has('gui running')
 	set lines=50 columns=100
 endif
 
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
 syntax on
 set ruler
 set nu 
@@ -40,7 +42,7 @@ set wildmenu
 set lazyredraw
 set showcmd
 set autoread "Automatically reread files that have been changed externally
-colorscheme jellybeans
+colorscheme lxvc
 
 "better up down on wrapped
 nnoremap j gj
