@@ -24,32 +24,32 @@ let g:lightline = {'colorscheme': 'jellybeans',}
 
 "gvim stuff
 if has('gui running')
-	set guifont=Consolas:h12
-	set guioptions-=m  "remove menu bar
-	set guioptions-=T  "remove toolbar
-	set guioptions-=r  "remove right-hand scroll bar
-	set guioptions-=L  "remove left-hand scroll bar
-	set lines=50 columns=100
+    set guifont=Consolas:h12
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+    set lines=50 columns=100
 endif
 
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 syntax on
 set ruler
-set nu 
+set nu
 set cursorline
 set wildmenu
 set lazyredraw
 set showcmd
 set autoread "Automatically reread files that have been changed externally
-colorscheme lxvc
+colorscheme jellybeans
 
 "better up down on wrapped
 nnoremap j gj
 nnoremap k gk
 
 "intends
-set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab 
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set autoindent
 
 "search
