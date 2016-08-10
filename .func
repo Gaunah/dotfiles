@@ -28,3 +28,12 @@ dockercleanup(){
 	echo delete dangling images:
 	docker rmi $(docker images --filter dangling=true -q) 2>/dev/null
 }
+
+wttr(){
+    if [ -n "$1" ]
+    then
+        curl wttr.in/$1
+    else
+        echo "useage wttr <city>"
+    fi
+}
