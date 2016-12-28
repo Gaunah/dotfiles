@@ -1,5 +1,6 @@
 #my stuff
-source ~/.aliases 
+source ~/.aliases
+set -o vi
 
 unset SSH_ASKPASS
 
