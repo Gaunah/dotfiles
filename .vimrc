@@ -32,7 +32,7 @@ if has('gui running')
     set lines=50 columns=100
 endif
 
-set listchars=eol:Â¬,tab:>Â·,trail:~,extends:>,precedes:<
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 syntax on
 set ruler
