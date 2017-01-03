@@ -17,7 +17,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
-let g:python_host_prog = '/usr/bin/python2.7'
 
 set laststatus=2 "for lightline
 let g:lightline = {'colorscheme': 'jellybeans',}
