@@ -1,2 +1,24 @@
-wget "https://www.archlinux.org/mirrorlist/?country=DE&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on" -O - | sed 's/#//' > mirrorlist && sudo mv mirrorlist /etc/pacman.d/mirrorlist 
-echo mirrorlist written to /etc/pacman.d/mirrorlist
+MIRROR_URL="https://www.archlinux.org/mirrorlist/?country=DE&country=GB&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on"
+
+# Execute a command as root (or sudo)
+do_with_root() {
+    # already root? "Just do it" (tm).
+    if [[ `whoami` = 'root' ]]; then
+        $*
+    elif command -v sudo > /dev/null; then
+        echo "sudo $*"
+        sudo $*
+    else
+        echo "Please run this script as root."
+        exit 1
+    fi
+}
+
+curl -s $MIRROR_URL | sed 's/#//' > /tmp/mirrorlist
+if [ $? != 0 ]; then exit 1; fi
+#override last backup
+do_with_root mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.BAK
+if [ $? != 0 ]; then exit 1; fi
+do_with_root mv /tmp/mirrorlist /etc/pacman.d/mirrorlist
+if [ $? != 0 ]; then exit 1; fi
+echo New mirrorlist written to /etc/pacman.d/mirrorlist.
