@@ -1,5 +1,7 @@
 #my stuff
-source ~/.aliases 
+source ~/.aliases
+set -o vi
+export MAKEFLAGS=-j$(nproc)
 
 unset SSH_ASKPASS
 
