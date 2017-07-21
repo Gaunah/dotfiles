@@ -23,7 +23,7 @@ fi
 
 #start backup
 echo -e "$BLUE[$(date +%X)] start backup$NC"
-borg create -p -v --stats --compression zlib,5 \
+borg create -p -v --stats --compression zlib \
     $REPO::'{hostname}-{user}-{now}' ~ \
     --exclude-caches \
     --exclude '*/.cache' \
