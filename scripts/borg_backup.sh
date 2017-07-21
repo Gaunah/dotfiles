@@ -17,8 +17,9 @@ fi
 
 #check connection
 if command -v nc > /dev/null; then
-    nc -z -w 3 $REMOTE $PORT
-    echo -e "${RED}could not connect to $REMOTE on port $PORT$NC"; exit 1
+    if ! nc -z -w 5 $REMOTE $PORT; then
+        echo -e "${RED}could not connect to $REMOTE on port $PORT$NC"; exit 1
+    fi
 fi
 
 #start backup
