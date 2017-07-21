@@ -2,11 +2,9 @@
 filetype off                " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 call vundle#begin('~/.vim/bundle/')
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -66,10 +64,6 @@ no <down> ddp
 no <left> <Nop>
 no <right> <Nop>
 no <up> ddkP
-nmap n nzz
-nmap N Nzz
-nmap { {zz
-nmap } }zz
 let mapleader = ","
 imap <leader>' ''<ESC>i
 imap <leader>" ""<ESC>i
