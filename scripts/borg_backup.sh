@@ -22,6 +22,11 @@ if command -v nc > /dev/null; then
     fi
 fi
 
+#check if already done today
+if test $(find ~/.cache/last_backup -mtime -1 2>/dev/null); then
+    echo -e "$BLUE[$(date +%X)] backup already done today!$NC"; exit 0
+fi
+
 #start backup
 echo -e "$BLUE[$(date +%X)] start backup$NC"
 borg create -p -v --stats --compression zlib \
@@ -38,5 +43,8 @@ borg prune -v --list $REPO --prefix '{hostname}-{user}' \
     --keep-daily=7 --keep-weekly=4 --keep-monthly=1
 
 if [ $? != 0 ]; then exit 1; fi
+
+#set timestamp for last backup
+touch ~/.cache/last_backup
 echo -e "$BLUE[$(date +%X)] finished!$NC"
 
