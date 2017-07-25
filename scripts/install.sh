@@ -1,9 +1,11 @@
 #!/bin/bash
 
-DOTFILE_DIR=~/dotfiles
-if [ ! -d $DOTFILE_DIR ]
-then
-    echo $DOTFILE_DIR not found!; exit 1;
-fi
+pushd $(dirname $0) > /dev/null # move to script folder
+cd ..
+DOTFILE_DIR=$(pwd)
 
-(cd $DOTFILE_DIR && cp -rf .aliases .astylerc .func .gitconfig .screenrc .vim .vimrc .zshrc ~)
+find -name ".*" -type f | xargs -I{} cp -fi {} ~
+cp -ri .vim ~
+scripts/get_VundleVim.sh
+
+popd > /dev/null
