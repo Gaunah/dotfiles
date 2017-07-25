@@ -5,6 +5,7 @@ BLUE='\033[1;34m'
 RED='\033[1;31m'
 NC='\033[0m'
 
+export BORG_PASSPHRASE=''
 REMOTE=
 PORT=
 USER=
@@ -35,7 +36,7 @@ if command -v nc > /dev/null; then
     fi
 fi
 
-#check if already done today
+#check if already done today (last 24h)
 if test $(find ~/.cache/last_backup -mtime -1 2>/dev/null); then
     echo -e "$BLUE[$(date +%X)] backup already done today!$NC"; exit 0
 fi
