@@ -10,6 +10,19 @@ PORT=
 USER=
 REPO=ssh://$USER@$REMOTE:$PORT/path/to/repo
 
+#check for vars
+if [ -z "$REMOTE" ]; then
+    echo -e "${RED}remote hostname not set!$NC"; exit 1
+fi
+
+if [ -z "$USER" ]; then
+    echo -e "${RED}remote user not set!$NC"; exit 1
+fi
+
+if [ -z "$PORT" ] || [ "$PORT" -le 0 ] || [ "$PORT" -gt 65535 ]; then
+    echo -e "${RED}remote port out of range!$NC"; exit 1
+fi
+
 #check for borg
 if ! command -v borg > /dev/null; then
     echo -e "${RED}borg not installed!$NC"; exit 1
