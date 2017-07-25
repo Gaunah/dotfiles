@@ -44,8 +44,9 @@ fi
 #start backup
 echo -e "$BLUE[$(date +%X)] start backup$NC"
 borg create -p -v --stats --compression zlib \
-    $REPO::'{hostname}-{user}-{now}' ~ \
+    $REPO::'{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}' ~ \
     --exclude-caches \
+    --exclude '*/.vim' \
     --exclude '*/.cache' \
     --exclude '*/.thumbnails/'
 
