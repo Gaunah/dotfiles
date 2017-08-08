@@ -41,6 +41,14 @@ if test $(find ~/.cache/last_backup -mtime -1 2>/dev/null); then
     echo -e "$BLUE[$(date +%X)] backup already done today!$NC"; exit 0
 fi
 
+#check for ac power
+if command -v acpi > /dev/null; then
+    ac_power=$(acpi -a | cut -d' ' -f3 | cut -d- -f1)
+    if [ $ac_power != "on" ]; then
+        echo -e "${RED}ac power not pluged in!$NC"; exit 1
+    fi
+fi
+
 #start backup
 echo -e "$BLUE[$(date +%X)] start backup$NC"
 borg create -p -v --stats --compression zlib \
