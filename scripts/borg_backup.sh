@@ -36,8 +36,8 @@ if command -v nc > /dev/null; then
     fi
 fi
 
-#check if already done today (last 24h)
-if test $(find ~/.cache/last_backup -mtime -1 2>/dev/null); then
+#check if already done today (last 23h)
+if [ -z $(find ~/.cache/last_backup -mmin +1380 2>/dev/null) ]; then
     echo -e "$BLUE[$(date +%X)] backup already done today!$NC"; exit 0
 fi
 
