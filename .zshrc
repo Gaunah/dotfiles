@@ -4,6 +4,7 @@ set -o vi
 export MAKEFLAGS=-j$(nproc)
 
 unset SSH_ASKPASS
+zstyle ':prompt:grml:left:setup' items rc change-root time path vcs percent
 
 # Filename:      /etc/zsh/zshrc
 # Purpose:       config file for zsh (z shell)
@@ -2096,7 +2097,7 @@ grml_prompt_pre_default=(
     rc-always         ''
     sad-smiley        ''
     shell-level       '%F{red}'
-    time              '%F{blue}'
+    time              '%F{yellow}'
     user              '%B%F{blue}'
     vcs               ''
 )
