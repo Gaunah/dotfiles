@@ -7,8 +7,12 @@
 [push]
     default = simple
 [color]
-    ui = true
+    ui = always
 [merge]
     tool = meld
-[credential]
-    helper = cache
+[commit]
+    template = ~/.gitmessage
+[pull]
+    ff = only
+[core]
+    pager = perl /usr/share/git/diff-highlight/diff-highlight | less
