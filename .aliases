@@ -1,5 +1,6 @@
 alias ll='ls -lhFN'
 alias la='ls -alhFN'
+alias ip='ip -c=auto'
 
 alias v='nvim'
 alias gs='git status -s'
