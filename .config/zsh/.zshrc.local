@@ -1,0 +1,18 @@
+zstyle ':prompt:grml:left:setup' items rc change-root time path vcs percent
+unset SSH_ASKPASS
+export MAKEFLAGS=-j$(nproc)
+
+# default progs:
+export EDITOR=nvim
+
+# home clean up:
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
+export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+
+#aliase
+source ${XDG_CONFIG_HOME}/aliases
+

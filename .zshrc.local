@@ -1,6 +1,0 @@
-#my stuff
-export MAKEFLAGS=-j$(nproc)
-source ~/.aliases
-
-zstyle ':prompt:grml:left:setup' items rc change-root time path vcs percent
-unset SSH_ASKPASS
