@@ -1,4 +1,4 @@
-zstyle ':prompt:grml:left:setup' items rc change-root time path vcs percent
+zstyle ':prompt:grml:left:setup' items rc change-root host time path vcs percent
 unset SSH_ASKPASS
 export MAKEFLAGS=-j$(nproc)
 
@@ -11,7 +11,16 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
-export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+export SCREENRC="${XDG_CONFIG_HOME}"/screen/screenrc
+export BUNDLE_USER_CONFIG="${XDG_CONFIG_HOME}"/bundle
+export BUNDLE_USER_CACHE="${XDG_CACHE_HOME}"/bundle
+export BUNDLE_USER_PLUGIN="${XDG_DATA_HOME}"/bundle
+export GEM_HOME="${XDG_DATA_HOME}"/gem
+export GEM_SPEC_CACHE="${XDG_CACHE_HOME}"/gem
+export CCACHE_DIR="${XDG_CACHE_HOME}"/ccache
+export ELINKS_CONFDIR="${XDG_CONFIG_HOME}"/elinks
+export MPLAYER_HOME="${XDG_CONFIG_HOME}"/mplayer
+export PYLINTHOME="${XDG_CACHE_HOME}"/pylint
 
 #aliase
 source ${XDG_CONFIG_HOME}/aliases
