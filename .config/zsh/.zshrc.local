@@ -2,6 +2,8 @@ zstyle ':prompt:grml:left:setup' items rc change-root host time path vcs percent
 unset SSH_ASKPASS
 export MAKEFLAGS=-j$(nproc)
 
+export PATH="${PATH}":~/.cargo/bin
+
 # default progs:
 export EDITOR=nvim
 
@@ -25,3 +27,6 @@ export PYLINTHOME="${XDG_CACHE_HOME}"/pylint
 #aliase
 source ${XDG_CONFIG_HOME}/aliases
 
+# color manpages with bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"

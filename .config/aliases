@@ -2,7 +2,7 @@ alias ll='ls -lhFN'
 alias la='ls -alhFN'
 alias ip='ip -c=auto'
 
-alias v='nvim'
+alias vim='nvim'
 alias gs='git status -s'
 alias gca='git commit -am'
 alias ga='git add .'
