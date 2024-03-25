@@ -46,13 +46,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    alacritty
     alejandra
     dunst
     gcc
     git
     grml-zsh-config
     htop
-    kitty
     libnotify
     ncdu
     neovim
