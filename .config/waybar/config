@@ -5,7 +5,7 @@
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces", "hyprland/language", "keyboard-state", "hyprland/submap"],
   "modules-center": ["clock" ],
-  "modules-right": ["pulseaudio", "custom/mem", "cpu", "battery", "tray"],
+  "modules-right": ["pulseaudio", "backlight", "custom/mem", "cpu", "battery", "tray"],
 
 
   //***************************
@@ -23,7 +23,7 @@
   },
 
   "keyboard-state": {
-    //"numlock": true,
+    "numlock": false,
     "capslock": true,
     "format": "{icon} ",
     "format-icons": {
@@ -37,9 +37,9 @@
   },
 
   "clock": {
-    //"timezone": "Europe/Berlin",
+    "timezone": "Europe/Berlin",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%a, %d %b, %I:%M %p}"
+    "format": "{:%a, %d %b, %H:%M:%S}"
   },
 
   "pulseaudio": {
