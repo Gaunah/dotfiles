@@ -1,0 +1,10 @@
+[font]
+size = 12
+normal = { family = "Hack", style = "Regular" }
+
+[window]
+opacity = 0.90
+
+[window.padding]
+x = 5
+y = 5
