@@ -3,48 +3,54 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "margin": "4 10 0 10",
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/language", "keyboard-state", "hyprland/submap"],
-    "modules-center": ["clock" ],
-    "modules-right": ["pulseaudio", "backlight", "cpu", "temperature", "battery", "tray"],
+    "modules-left": [
+        "clock",
+        "hyprland/language",
+        "pulseaudio",
+        "backlight",
+        "tray"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "cpu",
+        "custom/mem",
+        "battery"
+    ],
     "reload_style_on_change": true,
-
     //***************************
     //*  Modules configuration  *
     //***************************
-
     "hyprland/workspaces": {
-        "disable-scroll": true,
+        "disable-scroll": true
     },
-
     "hyprland/language": {
+        "format": "{} ",
+        "format-de": "DE",
         "format-en": "US",
-        "min-length": 5,
         "tooltip": false
     },
-
-    "keyboard-state": {
-        "numlock": false,
-        "capslock": true,
-        "format": "{icon} ",
-        "format-icons": {
-            "locked": " ",
-            "unlocked": ""
-        },
+    "network": {
+        "tooltip": true,
+        "format-wifi": "{bandwidthDownBytes}   {bandwidthUpBytes}  ",
+        "format-ethernet": "{bandwidthDownBytes}  {bandwidthUpBytes}",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 2,
+        "on-click-right": "~/.config/waybar/network.py"
     },
-
-    "hyprland/submap": {
-        "format": "pon {}"
-    },
-
     "clock": {
         "timezone": "Europe/Berlin",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b, %H:%M:%S}",
         "interval": 1
     },
-
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 1, // %, can be a float
         "reverse-scrolling": 1,
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -59,42 +65,46 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol",
-        "min-length": 13,
+        "min-length": 13
     },
-
     "custom/mem": {
         "format": "{} ",
         "interval": 3,
         "exec": "free -h | awk '/Mem:/{printf $3}'",
-        "tooltip": false,
+        "tooltip": false
     },
-
     "cpu": {
         "interval": 2,
         "format": "{usage}% ",
         "min-length": 6
     },
-
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": false,
+        "format": "<big>{icon}</big> {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "tooltip": false
     },
-
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": [""],
-        "min-length": 7,
+        "format-icons": [
+            ""
+        ],
+        "min-length": 7
     },
-
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": {
@@ -131,9 +141,8 @@
         },
         "tooltip": false
     },
-
     "tray": {
         "icon-size": 16,
         "spacing": 5
-    },
+    }
 }
